@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deadline</string>
+    <string name="textView1">BENVENUTO IN QUESTO FANTASTICO GIOCO!</string>
+    <string name="radioButton1">Nuovo utente?</string>
+    <string name="radioButton2">Ho già un account</string>
+    <string name="button1">PROCEDI</string>
+    <string name="imageView1">Immagine di benvenuto</string>
+</resources>

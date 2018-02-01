@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Deadline</string>
+    <string name="textView1">WELCOME IN THIS AMAZING GAME!</string>
+    <string name="radioButton1">New user?</string>
+    <string name="radioButton2">I already have an account</string>
+    <string name="button1">PROCEED</string>
+    <string name="imageView1">Welcome image</string>
+</resources>
