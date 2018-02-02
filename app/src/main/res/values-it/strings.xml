@@ -6,4 +6,12 @@
     <string name="radioButton2">Ho già un account</string>
     <string name="button1">PROCEDI</string>
     <string name="imageView1">Immagine di benvenuto</string>
+    <string name="RadioButton3">Crediti</string>
+    <string name="editText1">Nome utente...</string>
+    <string name="editText3">Password (ancora)...</string>
+    <string name="textView2">CREA UN NUOVO UTENTE</string>
+    <string name="button2">CONFERMA</string>
+    <string name="differentPassword">Le password non sono le stesse</string>
+    <string name="missingInformation">Mancano alcuni dati</string>
+    <string name="userCreated">Utente correttamente creato</string>
 </resources>

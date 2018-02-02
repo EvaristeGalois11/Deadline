@@ -5,4 +5,13 @@
     <string name="radioButton2">I already have an account</string>
     <string name="button1">PROCEED</string>
     <string name="imageView1">Welcome image</string>
+    <string name="RadioButton3">About</string>
+    <string name="editText1">Username...</string>
+    <string name="editText2" translatable="false">Password...</string>
+    <string name="editText3">Password (again)...</string>
+    <string name="textView2">CREATE A NEW USER</string>
+    <string name="button2">CONFIRM</string>
+    <string name="missingInformation">Some info are missing</string>
+    <string name="differentPassword">Passwords are not the same</string>
+    <string name="userCreated">User correctly created</string>
 </resources>
