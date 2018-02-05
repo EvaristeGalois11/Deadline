@@ -14,4 +14,5 @@
     <string name="missingInformation">Some info are missing</string>
     <string name="differentPassword">Passwords are not the same</string>
     <string name="userCreated">User correctly created</string>
+    <string name="errorCreationUser">Some error occurred during the creation of the user</string>
 </resources>

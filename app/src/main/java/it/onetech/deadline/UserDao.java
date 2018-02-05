@@ -5,13 +5,21 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
+import java.util.List;
+
 @Dao
 public interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.FAIL)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     void addUser(User user);
 
     @Query("select * from user where username = :username")
     User getUser(String username);
+
+    @Query("delete from user")
+    void cleanDatabase();
+
+    @Query("select * from user")
+    List<User> getAllUsers();
 
 }

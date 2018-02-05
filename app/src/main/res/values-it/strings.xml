@@ -14,4 +14,5 @@
     <string name="differentPassword">Le password non sono le stesse</string>
     <string name="missingInformation">Mancano alcuni dati</string>
     <string name="userCreated">Utente correttamente creato</string>
+    <string name="errorCreationUser">Si è presentato un errore durante la creazione dell\'utente</string>
 </resources>
