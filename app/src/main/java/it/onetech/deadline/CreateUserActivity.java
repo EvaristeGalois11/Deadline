@@ -29,7 +29,7 @@ public class CreateUserActivity extends AppCompatActivity {
         String password2 = extractStringFromEditText(R.id.editText3);
 
         if (checkCondition(username, password1, password2)) {
-            User user = new User(username, password1);
+            User user = new User(username, Hashing.sha256().hashString(password1, StandardCharsets.UTF_8).toString());
             
             try {
                 database.userDao().addUser(user);

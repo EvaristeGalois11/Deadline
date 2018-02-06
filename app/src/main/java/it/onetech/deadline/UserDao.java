@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
+    @Insert()
     void addUser(User user);
 
     @Query("select * from user where username = :username")

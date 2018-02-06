@@ -25,7 +25,8 @@ public class WelcomeActivity extends AppCompatActivity {
                 break;
             }
             case R.id.radioButton2: {
-                // TODO implementare LOGIN
+                Intent i = new Intent(this, LoginActivity.class);
+                startActivity(i);
                 break;
             }
             case R.id.radioButton3: {

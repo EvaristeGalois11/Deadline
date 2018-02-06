@@ -15,4 +15,8 @@
     <string name="missingInformation">Mancano alcuni dati</string>
     <string name="userCreated">Utente correttamente creato</string>
     <string name="errorCreationUser">Si è presentato un errore durante la creazione dell\'utente</string>
+    <string name="textView3">ACCEDI AL TUO ACCOUNT</string>
+    <string name="button3">ACCEDI</string>
+    <string name="usernameNotFound">Questo username non esiste</string>
+    <string name="wrongPassword">La password è sbagliata</string>
 </resources>
