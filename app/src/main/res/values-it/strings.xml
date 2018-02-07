@@ -19,4 +19,9 @@
     <string name="button3">ACCEDI</string>
     <string name="usernameNotFound">Questo username non esiste</string>
     <string name="wrongPassword">La password è sbagliata</string>
+    <string name="button5">GIOCA</string>
+    <string name="button4">ESCI</string>
+    <string name="textView4">Profilo di USERNAME</string>
+    <string name="textView5">Partite giocate = XX</string>
+    <string name="textView6">Miglior punteggio = XX</string>
 </resources>

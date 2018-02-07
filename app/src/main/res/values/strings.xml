@@ -19,4 +19,9 @@
     <string name="button3">LOGIN</string>
     <string name="usernameNotFound">This username does not exist</string>
     <string name="wrongPassword">Password is incorrect</string>
+    <string name="button4">LOGOUT</string>
+    <string name="button5">PLAY</string>
+    <string name="textView4">Profile of USERNAME</string>
+    <string name="textView5">Games played = XX</string>
+    <string name="textView6">Best score = XX</string>
 </resources>

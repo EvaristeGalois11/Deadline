@@ -17,9 +17,13 @@ public class User {
     @NonNull
     public String username;
     public String password;
+    public long games;
+    public long bestScore;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        games = 0;
+        bestScore = 0;
     }
 }

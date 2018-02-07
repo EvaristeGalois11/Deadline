@@ -1,5 +1,6 @@
 package it.onetech.deadline;
 
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -31,8 +32,9 @@ public class LoginActivity extends AppCompatActivity {
             if (user == null) {
                 Toast.makeText(this, R.string.usernameNotFound, Toast.LENGTH_LONG).show();
             } else if (Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString().equals(user.password)) {
-                // TODO login riuscito
-                Toast.makeText(this, "LOGIN EFFETTUATO", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, ProfileActivity.class);
+                i.putExtra("username", username);
+                startActivity(i);
             } else {
                 Toast.makeText(this, R.string.wrongPassword, Toast.LENGTH_LONG).show();
             }
