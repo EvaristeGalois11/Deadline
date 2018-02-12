@@ -22,9 +22,10 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".WelcomeActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity
-            android:name=".ProfileActivity"
-            android:parentActivityName=".WelcomeActivity" />
+            android:name=".GameActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

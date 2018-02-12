@@ -24,4 +24,5 @@
     <string name="textView4">Profilo di USERNAME</string>
     <string name="textView5">Partite giocate = XX</string>
     <string name="textView6">Miglior punteggio = XX</string>
+    <string name="checkBok1">Ricordati di me</string>
 </resources>

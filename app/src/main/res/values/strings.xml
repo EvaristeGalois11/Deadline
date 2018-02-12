@@ -24,4 +24,5 @@
     <string name="textView4">Profile of USERNAME</string>
     <string name="textView5">Games played = XX</string>
     <string name="textView6">Best score = XX</string>
+    <string name="checkBok1">Remember me</string>
 </resources>

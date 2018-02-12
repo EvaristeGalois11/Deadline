@@ -1,11 +1,16 @@
 package it.onetech.deadline;
 
+import android.content.SharedPreferences.Editor;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,9 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             if (user == null) {
                 Toast.makeText(this, R.string.usernameNotFound, Toast.LENGTH_LONG).show();
             } else if (Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString().equals(user.password)) {
-                Intent i = new Intent(this, ProfileActivity.class);
-                i.putExtra("username", username);
-                startActivity(i);
+                checkRemember(username);
+                login(username);
             } else {
                 Toast.makeText(this, R.string.wrongPassword, Toast.LENGTH_LONG).show();
             }
@@ -52,5 +56,21 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void login(String username) {
+        Intent i = new Intent(this, ProfileActivity.class);
+        i.putExtra("username", username);
+        startActivity(i);
+    }
+
+    private void checkRemember(String username) {
+        CheckBox checkBox = findViewById(R.id.checkBox1);
+
+        if (checkBox.isChecked()) {
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+            Editor edit = settings.edit();
+            edit.putString("username", username).apply();
+        }
     }
 }

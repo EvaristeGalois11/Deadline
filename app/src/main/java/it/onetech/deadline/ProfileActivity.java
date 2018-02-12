@@ -1,8 +1,13 @@
 package it.onetech.deadline;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.view.View;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -31,5 +36,18 @@ public class ProfileActivity extends AppCompatActivity {
         String oldString = textView.getText().toString();
         String newString = oldString.replace(target, replacement);
         textView.setText(newString);
+    }
+
+    public void onClickButton4(View view) {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        Editor edit = settings.edit();
+        edit.remove("username").apply();
+        Intent i = new Intent(this, WelcomeActivity.class);
+        startActivity(i);
+    }
+
+    public void onClickButton5(View view) {
+        Intent i = new Intent(this, GameActivity.class);
+        startActivity(i);
     }
 }
