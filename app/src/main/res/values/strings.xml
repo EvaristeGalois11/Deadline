@@ -25,4 +25,7 @@
     <string name="textView5">Games played = XX</string>
     <string name="textView6">Best score = XX</string>
     <string name="checkBok1">Remember me</string>
+    <string name="button6">CHECK</string>
+    <string name="button7" translatable="false">RESET</string>
+    <string name="button8">EXIT</string>
 </resources>

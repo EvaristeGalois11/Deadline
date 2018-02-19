@@ -22,10 +22,17 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".WelcomeActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:launchMode="singleTop" />
         <activity
             android:name=".GameActivity"
+            android:parentActivityName=".ProfileActivity"
             android:screenOrientation="landscape" />
+
+        <service
+            android:name=".GamePlayedService"
+            android:exported="false" />
     </application>
 
 </manifest>

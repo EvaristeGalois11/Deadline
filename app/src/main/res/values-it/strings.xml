@@ -25,4 +25,6 @@
     <string name="textView5">Partite giocate = XX</string>
     <string name="textView6">Miglior punteggio = XX</string>
     <string name="checkBok1">Ricordati di me</string>
+    <string name="button6">CONTROLLA</string>
+    <string name="button8">ESCI</string>
 </resources>
