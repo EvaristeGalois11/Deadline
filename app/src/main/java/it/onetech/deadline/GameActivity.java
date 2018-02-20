@@ -1,14 +1,19 @@
 package it.onetech.deadline;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
-    CustomImage buffer;
+    private CustomImage buffer;
+    private CountDownTimer timer;
+    private final long millisInFuture = 60000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,28 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        timer = new CountDownTimer(millisInFuture, 100) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                ProgressBar progressBar = findViewById(R.id.progressBar);
+
+                int max = progressBar.getMax();
+                float m = millisInFuture;
+                float r = millisUntilFinished;
+
+                int newProgress =  Math.round((1 - r / m) * max);
+                progressBar.setProgress(newProgress);
+            }
+
+            @Override
+            public void onFinish() {
+                ProgressBar progressBar = findViewById(R.id.progressBar);
+                progressBar.setProgress(progressBar.getMax());
+                Toast.makeText(GameActivity.this, "I puzzle non fanno per te...", Toast.LENGTH_SHORT).show();
+            }
+        }.start();
+
     }
 
     public void onClickButton6(View view) {
@@ -66,6 +93,12 @@ public class GameActivity extends AppCompatActivity {
 
     public void exit(View view) {
         finish();
+    }
+
+    @Override
+    public void finish() {
+        timer.cancel();
+        super.finish();
     }
 
 }

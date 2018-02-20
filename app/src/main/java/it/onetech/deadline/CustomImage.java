@@ -23,7 +23,7 @@ public class CustomImage extends AppCompatImageView {
         Drawable tempDrawable = this.getDrawable();
         int tempId = this.getIndex();
         this.setImageDrawable(other.getDrawable());
-        this.setIndex(this.getIndex());
+        this.setIndex(other.getIndex());
         other.setImageDrawable(tempDrawable);
         other.setIndex(tempId);
 

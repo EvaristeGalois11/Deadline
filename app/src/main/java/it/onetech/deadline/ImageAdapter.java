@@ -51,7 +51,7 @@ public class ImageAdapter extends BaseAdapter {
 
         GridView gridView = activity.findViewById(R.id.gridView);
         column = gridView.getNumColumns();
-        row = 3;
+        row = 3; // TODO calcolarlo in base alle dimensioni dello schermo
 
         chunks = splitBitmap(R.drawable.test);
         shuffleChunks();
