@@ -1,8 +1,10 @@
 package it.onetech.deadline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.GridView;
@@ -46,6 +48,10 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        initCountDown();
+    }
+
+    private void initCountDown() {
         timer = new CountDownTimer(millisInFuture, 100) {
 
             @Override
@@ -56,7 +62,7 @@ public class GameActivity extends AppCompatActivity {
                 float m = millisInFuture;
                 float r = millisUntilFinished;
 
-                int newProgress =  Math.round((1 - r / m) * max);
+                int newProgress = Math.round((1 - r / m) * max);
                 progressBar.setProgress(newProgress);
             }
 
@@ -64,15 +70,14 @@ public class GameActivity extends AppCompatActivity {
             public void onFinish() {
                 ProgressBar progressBar = findViewById(R.id.progressBar);
                 progressBar.setProgress(progressBar.getMax());
-                Toast.makeText(GameActivity.this, "I puzzle non fanno per te...", Toast.LENGTH_SHORT).show();
+                victoryCheck(false);
             }
         }.start();
-
     }
 
     public void onClickButton6(View view) {
+        timer.cancel();
         GridView gridView = findViewById(R.id.gridView);
-
         int elems = gridView.getChildCount();
         boolean equal = true;
         for (int i = 0; i < elems; i++) {
@@ -80,10 +85,27 @@ public class GameActivity extends AppCompatActivity {
             equal &= image.getIndex() == i;
         }
 
-        Toast.makeText(this, "" + equal, Toast.LENGTH_SHORT).show();
+        victoryCheck(equal);
+    }
+
+    private void victoryCheck(boolean equal) {
+        Intent i = new Intent();
+        if (equal) {
+            ProgressBar p = findViewById(R.id.progressBar);
+            int score = p.getMax() - p.getProgress();
+            i.putExtra("score", score);
+            Toast.makeText(this, "YOU WIN WITH A SCORE OF " + score, Toast.LENGTH_LONG).show();
+            setResult(RESULT_OK, i);
+        } else {
+            Toast.makeText(this, "YOU LOSE", Toast.LENGTH_LONG).show();
+            setResult(RESULT_CANCELED, i);
+        }
+        finish();
     }
 
     public void onClickButton7(View view) {
+        timer.cancel();
+        initCountDown();
         GridView gridView = findViewById(R.id.gridView);
         ImageAdapter adapter = (ImageAdapter) gridView.getAdapter();
         adapter.shuffleChunks();
@@ -92,6 +114,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void exit(View view) {
+        Intent i = new Intent();
+        setResult(RESULT_CANCELED, i);
         finish();
     }
 
@@ -99,6 +123,16 @@ public class GameActivity extends AppCompatActivity {
     public void finish() {
         timer.cancel();
         super.finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            Intent i = new Intent();
+            setResult(RESULT_CANCELED, i);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

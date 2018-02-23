@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class ProfileActivity extends AppCompatActivity {
     private AppDatabase database;
     private String username;
+    private final int SCORE_CODE = 42;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,8 @@ public class ProfileActivity extends AppCompatActivity {
         TextView textView5 = findViewById(R.id.textView5);
         TextView textView6 = findViewById(R.id.textView6);
 
-        setUserInformation(textView4, R.string.textView4,"USERNAME", user.username);
-        setUserInformation(textView5, R.string.textView5,"XX", Long.toUnsignedString(user.games));
+        setUserInformation(textView4, R.string.textView4, "USERNAME", user.username);
+        setUserInformation(textView5, R.string.textView5, "XX", Long.toUnsignedString(user.games));
         setUserInformation(textView6, R.string.textView6, "XX", Long.toUnsignedString(user.bestScore));
     }
 
@@ -65,13 +66,28 @@ public class ProfileActivity extends AppCompatActivity {
         startService(service);
 
         Intent i = new Intent(this, GameActivity.class);
-        startActivity(i);
+        startActivityForResult(i, SCORE_CODE);
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstance) {
         savedInstance.putString("username", username);
         super.onSaveInstanceState(savedInstance);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SCORE_CODE) {
+            if (resultCode == RESULT_OK) {
+                User user = database.userDao().getUser(username);
+                long bestScore = user.bestScore;
+                int score = data.getIntExtra("score", -1);
+                if (score > bestScore) {
+                    user.bestScore = score;
+                    database.userDao().updateUser(user);
+                }
+            }
+        }
     }
 
 
