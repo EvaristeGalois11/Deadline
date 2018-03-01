@@ -15,6 +15,7 @@ public class GameActivity extends AppCompatActivity {
     private CustomImage buffer;
     private CountDownTimer timer;
     private final long millisInFuture = 60000;
+    private long tempTime;
 
 
     @Override
@@ -48,14 +49,15 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
-        initCountDown();
+        initCountDown(millisInFuture);
     }
 
-    private void initCountDown() {
-        timer = new CountDownTimer(millisInFuture, 100) {
+    private void initCountDown(long time) {
+        timer = new CountDownTimer(time, 50) {
 
             @Override
             public void onTick(long millisUntilFinished) {
+                tempTime = millisUntilFinished;
                 ProgressBar progressBar = findViewById(R.id.progressBar);
 
                 int max = progressBar.getMax();
@@ -70,7 +72,8 @@ public class GameActivity extends AppCompatActivity {
             public void onFinish() {
                 ProgressBar progressBar = findViewById(R.id.progressBar);
                 progressBar.setProgress(progressBar.getMax());
-                victoryCheck(false);
+                Toast.makeText(GameActivity.this, "TIME'S UP", Toast.LENGTH_SHORT).show();
+                onClickButton7(findViewById(R.id.button7));
             }
         }.start();
     }
@@ -96,21 +99,21 @@ public class GameActivity extends AppCompatActivity {
             i.putExtra("score", score);
             Toast.makeText(this, "YOU WIN WITH A SCORE OF " + score, Toast.LENGTH_LONG).show();
             setResult(RESULT_OK, i);
+            finish();
         } else {
-            Toast.makeText(this, "YOU LOSE", Toast.LENGTH_LONG).show();
-            setResult(RESULT_CANCELED, i);
+            Toast.makeText(this, "NOT CORRECT", Toast.LENGTH_SHORT).show();
+            initCountDown(tempTime);
         }
-        finish();
     }
 
     public void onClickButton7(View view) {
         timer.cancel();
-        initCountDown();
         GridView gridView = findViewById(R.id.gridView);
         ImageAdapter adapter = (ImageAdapter) gridView.getAdapter();
         adapter.shuffleChunks();
         gridView.invalidateViews();
         buffer = null;
+        initCountDown(millisInFuture);
     }
 
     public void exit(View view) {
