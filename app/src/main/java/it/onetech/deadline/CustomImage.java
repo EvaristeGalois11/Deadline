@@ -2,7 +2,7 @@ package it.onetech.deadline;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 
 public class CustomImage extends AppCompatImageView {
     private int index;
