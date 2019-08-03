@@ -1,4 +1,4 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import android.content.SharedPreferences.Editor;
 
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;

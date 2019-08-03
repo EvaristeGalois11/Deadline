@@ -1,4 +1,4 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import android.content.Intent;
 import android.os.Bundle;

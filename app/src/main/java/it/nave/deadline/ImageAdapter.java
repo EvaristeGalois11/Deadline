@@ -1,10 +1,9 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import androidx.appcompat.widget.AppCompatImageView;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;

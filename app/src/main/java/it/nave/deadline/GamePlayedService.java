@@ -1,8 +1,7 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.util.Log;
 
 public class GamePlayedService extends IntentService {
 

@@ -1,10 +1,10 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
-import androidx.core.app.NavUtils;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;

@@ -1,4 +1,4 @@
-package it.onetech.deadline;
+package it.nave.deadline;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
