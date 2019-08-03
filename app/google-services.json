@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846523522256",
+    "firebase_url": "https://deadline-2f829.firebaseio.com",
+    "project_id": "deadline-2f829",
+    "storage_bucket": "deadline-2f829.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846523522256:android:49a990589d779cf8",
+        "android_client_info": {
+          "package_name": "it.nave.deadline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846523522256-i1hsr28fo3go27d49hnv9qi4nasc033i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzjxW2a0bdGm1mI_GwaGwf1Z9k_mOjQtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846523522256-i1hsr28fo3go27d49hnv9qi4nasc033i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
