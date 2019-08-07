@@ -39,8 +39,8 @@ public class ProfileActivity extends AppCompatActivity {
         TextView textView6 = findViewById(R.id.textView6);
 
         setUserInformation(textView4, R.string.textView4, "USERNAME", user.username);
-        setUserInformation(textView5, R.string.textView5, "XX", Long.toUnsignedString(user.games));
-        setUserInformation(textView6, R.string.textView6, "XX", Long.toUnsignedString(user.bestScore));
+        setUserInformation(textView5, R.string.textView5, "XX", Long.toString(user.games));
+        setUserInformation(textView6, R.string.textView6, "XX", Long.toString(user.bestScore));
     }
 
     private void setUserInformation(TextView textView, int strId, String target, String replacement) {
